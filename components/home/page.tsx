@@ -6,6 +6,7 @@ import Image from "next/image";
 import arrow from "../../assets/images/icons8-right-arrow-100 (1).png";
 import { posts } from "../../assets/data/postsData";
 import Post from "./components/post";
+import { v4 as uuidv4 } from "uuid";
 
 type Props = {};
 
@@ -18,7 +19,7 @@ const Home = (props: Props) => {
         <div id="projects" className="space-y-3">
           {projectsData.map((project) => (
             <Project
-              key={Date.now()}
+              key={uuidv4()}
               title={project.title}
               description={project.description}
               tech={project.tech}
@@ -40,7 +41,7 @@ const Home = (props: Props) => {
             className="flex justify-between overflow-x-scroll md:overflow-x-visible space-x-5"
           >
             {posts.map((post) => (
-              <Post key={Date.now()} title={post.title} />
+              <Post key={uuidv4()} title={post.title} />
             ))}
           </div>
           <div className="py-5 flex items-center space-x-3 max-w-fit cursor-pointer">

@@ -1,15 +1,23 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import sun from "../assets/images/icons8-sun-50.png";
+import Image from "next/image";
 
 const MobileNavBar = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
   return (
     <div className="">
-      <div>
-        <button className="absolute right-5 top-5 px-2 py-1 text-sm text-secondary bg-dusk border-2 border-neutral-600 rounded-full">
+      <div className="md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-primaryBg bg-opacity-80 backdrop-blur-sm z-20">
+        <button
+          onClick={() => setIsOn(true)}
+          className="px-3 py-1 text-sm text-secondary font-semibold bg-dusk border-2 border-neutral-600 rounded-full"
+        >
           Menu
         </button>
+        <div className="p-1 rounded-lg border-2 border-neutral-600">
+          <Image src={sun} width={25} height={25} alt="change theme" />
+        </div>
       </div>
       {isOn && (
         <div className="md:hidden w-full h-screen fixed p-5 z-20 bg-black bg-opacity-50 backdrop-blur-sm">
@@ -18,7 +26,9 @@ const MobileNavBar = () => {
               <p className="font-semibold text-sm text-neutral-500">
                 Navigation
               </p>
-              <p>X</p>
+              <p className="cursor-pointer" onClick={() => setIsOn(false)}>
+                X
+              </p>
             </div>
             <div className="flex flex-col divide-y-2 divide-neutral-850">
               {[

@@ -1,6 +1,6 @@
 export const posts:IPost[] = [
     {
-        title:"Proscatination + Git gone wrong = a change in my life"
+        title:"Procatination + Git gone wrong = A change in my life"
     },
     {
         title:"NextJS + TailwindCSS = Awesome fronted combo"

@@ -11,7 +11,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <div className="scale-90 md:scale-100 md:w-1/2 md:pt-32 space-y-10 md:space-y-20 overflow-x-hidden md:overflow-x-visible">
+    <div className="scale-90 md:scale-100 md:w-1/2 md:pt-32 space-y-14 overflow-x-hidden md:overflow-x-visible">
       <Profile />
       <div className="space-y-5">
         <p className="text-2xl md:text-3xl font-bold">Featured Projects</p>

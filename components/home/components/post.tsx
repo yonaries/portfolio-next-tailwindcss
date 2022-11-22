@@ -13,7 +13,7 @@ const Post = (props: Props) => {
     >
       <article className="border-2 border-dusk bg-primaryBg hover:bg-dusk text-white p-5 h-full rounded-xl">
         <div className="space-y-2">
-          <p className="md:text-lg font-medium">{props.title}</p>
+          <p className="text-lg font-medium">{props.title}</p>
         </div>
       </article>
     </Link>

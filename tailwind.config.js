@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         primaryBg: "rgb(21, 21, 21)",
-        secondary: "rgb(148, 148, 149)",
+        secondary: "rgb(138, 138, 138)",
         dusk: "rgb(32, 32, 34)",
         "darker-dusk": "rgb(25, 25, 25)",
         "neutral-850":"rgb(30, 30, 30)"
@@ -17,7 +17,7 @@ module.exports = {
         "2xs": "0.6rem",
       },
       fontFamily: {
-        lexend: ["Lexend", "sans-serif"],
+        sans: ["var(--font-inter)"],
       },
       maxWidth: {
         hd: "85.375rem",

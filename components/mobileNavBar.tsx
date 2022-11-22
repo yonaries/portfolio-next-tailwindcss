@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import sun from "../assets/images/icons8-sun-50.png";
 import Image from "next/image";
+import { v4 as uuidv4 } from "uuid";
+
 
 const MobileNavBar = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
@@ -39,6 +41,7 @@ const MobileNavBar = () => {
                 ["Resume", "#resume"],
               ].map((route) => (
                 <Link
+                  key={uuidv4()}
                   className="cursor-pointer py-3 hover:text-white transition-all hover:underline"
                   href={route[1]}
                 >

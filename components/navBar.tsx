@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import sun from "../assets/images/icons8-sun-50.png";
 import Image from "next/image";
+import { v4 as uuidv4 } from "uuid";
 
 const NavBar = () => {
   return (
@@ -16,6 +17,7 @@ const NavBar = () => {
             ["Resume", "#resume"],
           ].map((route) => (
             <Link
+              key={uuidv4()}
               className="cursor-pointer hover:text-white transition-all hover:underline"
               href={route[1]}
             >

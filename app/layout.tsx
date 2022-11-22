@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className={` bg-primaryBg text-white`}>
+      <body className={`bg-primaryBg text-white`}>
         <NavBar />
         <MobileNavBar />
         {children}

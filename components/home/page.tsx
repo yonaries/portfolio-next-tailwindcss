@@ -27,7 +27,7 @@ const Home = (props: Props) => {
           ))}
         </div>
         <div className="py-5 flex items-center space-x-3 max-w-fit cursor-pointer">
-          <p className="text-secondary font-medium transition-all hover:text-white hover:underline">
+          <p className="text-secondary font-medium transition-all hover:text-primaryBg dark:hover:text-white hover:underline">
             More projects
           </p>
           <Image src={arrow} width={35} height={20} alt="more projects" />
@@ -45,7 +45,7 @@ const Home = (props: Props) => {
             ))}
           </div>
           <div className="py-5 flex items-center space-x-3 max-w-fit cursor-pointer">
-            <p className="text-secondary font-medium hover:text-white transition-all hover:underline">
+            <p className="text-secondary font-medium hover:text-primaryBg dark:hover:text-white transition-all hover:underline">
               More posts
             </p>
             <Image src={arrow} width={35} height={20} alt="more projects" />

@@ -9,9 +9,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html className="">
       <head />
-      <body className={`bg-primaryBg text-white`}>
+      <body className="dark:bg-primaryBg bg-white dark:text-white text-primaryBg">
         <NavBar />
         <MobileNavBar />
         {children}

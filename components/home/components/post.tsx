@@ -11,7 +11,7 @@ const Post = (props: Props) => {
       href="#"
       className="h-48 md:h-56 w-full transition-all md:hover:scale-110"
     >
-      <article className="border-2 border-dusk bg-primaryBg hover:bg-dusk text-white p-5 h-full rounded-xl">
+      <article className="border-2 border-dusk dark:bg-primaryBg hover:bg-neutral-50 dark:hover:bg-dusk text-primaryBg dark:text-white p-5 h-full rounded-xl">
         <div className="space-y-2">
           <p className="text-lg font-medium">{props.title}</p>
         </div>

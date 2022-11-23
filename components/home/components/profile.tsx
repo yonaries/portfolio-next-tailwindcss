@@ -28,7 +28,7 @@ const Profile = () => {
           </p>
           <div className="flex items-center space-x-3 max-w-fit cursor-pointer">
             <Link
-              className="text-secondary hover:text-white transition-all hover:underline"
+              className="text-secondary hover:text-primaryBg dark:hover:text-white transition-all hover:underline"
               href="/boom"
             >
               Portion of my story

@@ -5,15 +5,14 @@ import sun from "../assets/images/icons8-sun-50.png";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
-
 const MobileNavBar = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
   return (
-    <div className="">
-      <div className="md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-primaryBg bg-opacity-80 backdrop-blur-sm z-20">
+    <div>
+      <div className="md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-white dark:bg-primaryBg bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm z-20">
         <button
           onClick={() => setIsOn(true)}
-          className="px-3 py-1 text-sm text-secondary font-semibold bg-dusk border-2 border-neutral-600 rounded-full"
+          className="px-3 py-1 text-sm text-primaryBg dark:text-secondary font-semibold bg-white dark:bg-dusk border-2 border-primaryBg dark:border-neutral-600 rounded-full"
         >
           Menu
         </button>
@@ -22,8 +21,8 @@ const MobileNavBar = () => {
         </div>
       </div>
       {isOn && (
-        <div className="md:hidden w-full h-screen fixed p-5 z-20 bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className=" h-fit top-5 text-neutral-300 border-2 border-neutral-700 bg-darker-dusk p-5 rounded-2xl">
+        <div className="md:hidden w-full h-screen fixed p-5 z-20 bg-white dark:bg-black bg-opacity-50 backdrop-blur-sm">
+          <div className=" h-fit top-5 text-primaryBg dark:text-neutral-300 border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-darker-dusk p-5 rounded-2xl">
             <div className="flex justify-between mb-3">
               <p className="font-semibold text-sm text-neutral-500">
                 Navigation
@@ -32,7 +31,7 @@ const MobileNavBar = () => {
                 X
               </p>
             </div>
-            <div className="flex flex-col divide-y-2 divide-neutral-850">
+            <div className="flex flex-col divide-y-1 dark:divide-neutral-850 divide-neutral-200">
               {[
                 ["Home", "#home"],
                 ["Blog", "#blog"],

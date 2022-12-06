@@ -21,8 +21,11 @@ body {
 
 @media (min-width: 768px) {
 
-  #projects:hover>#card:not(:hover) {
+  .dark #projects:hover>#card:not(:hover) {
     opacity: 0.2;
+  }
+  #projects:hover>#card:not(:hover) {
+    opacity: 0.4;
   }
   #posts:hover>#card:not(:hover) {
     opacity: 0.2;

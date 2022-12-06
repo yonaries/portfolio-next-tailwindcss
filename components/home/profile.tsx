@@ -1,16 +1,20 @@
 import Image from "next/image";
 import React from "react";
-import photo from "../../../assets/images/photo.png";
-import arrow from "../../../assets/images/icons8-right-arrow-100 (1).png";
+import photo from "../../assets/images/photo.png";
+import photo_colored from "../../assets/images/colored-photo.png";
+import arrow from "../../assets/images/icons8-right-arrow-100 (1).png";
 import Link from "next/link";
+import { useTheme } from "../../context/ThemeContext";
 
 const Profile = () => {
+  const { darkTheme } = useTheme();
+
   return (
     <div className="md:flex w-full md:justify-between">
       <div className="py-5 md:hidden">
         <Image
           className="rounded-full w-12 "
-          src={photo}
+          src={darkTheme ? photo : photo_colored}
           alt="Image of Yonathan Dejene"
         />
       </div>
@@ -29,7 +33,7 @@ const Profile = () => {
           <div className="flex items-center space-x-3 max-w-fit cursor-pointer">
             <Link
               className="text-secondary hover:text-primaryBg dark:hover:text-white transition-all hover:underline"
-              href="/boom"
+              href=""
             >
               Portion of my story
             </Link>
@@ -45,7 +49,7 @@ const Profile = () => {
       <div className="">
         <Image
           className="rounded-full hidden md:block w-12 md:w-28"
-          src={photo}
+          src={darkTheme ? photo : photo_colored}
           alt="Image of Yonathan Dejene"
         />
       </div>

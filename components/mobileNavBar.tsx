@@ -1,12 +1,16 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import sun from "../assets/images/icons8-sun-50.png";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
+import { useTheme } from "../context/ThemeContext";
+import sun from "../assets/images/icons8-sun-50.png";
+import moon from "../assets/images/icons8-moon-symbol-96.png";
 
 const MobileNavBar = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
+  const { darkTheme, changeTheme } = useTheme();
+
   return (
     <div>
       <div className="md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-white dark:bg-primaryBg bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm z-20">
@@ -16,13 +20,21 @@ const MobileNavBar = () => {
         >
           Menu
         </button>
-        <div className="p-1 rounded-lg border-2 border-neutral-600">
-          <Image src={sun} width={25} height={25} alt="change theme" />
+        <div
+          onClick={() => changeTheme(darkTheme)}
+          className="p-1 rounded-lg border-2 border-neutral-600"
+        >
+          <Image
+            src={darkTheme ? sun : moon}
+            width={25}
+            height={25}
+            alt="change theme"
+          />
         </div>
       </div>
       {isOn && (
-        <div className="md:hidden w-full h-screen fixed p-5 z-20 bg-white dark:bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className=" h-fit top-5 text-primaryBg dark:text-neutral-300 border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-darker-dusk p-5 rounded-2xl">
+        <div className="md:hidden w-full h-screen fixed p-5 z-20 bg-white dark:bg-primaryBg bg-opacity-60 dark:bg-opacity-60 backdrop-blur-sm">
+          <div className=" h-fit top-5 text-primaryBg dark:text-neutral-300 border-2 border-neutral-300 dark:border-neutral-700 bg-white dark:bg-darker-dusk p-5 rounded-2xl">
             <div className="flex justify-between mb-3">
               <p className="font-semibold text-sm text-neutral-500">
                 Navigation
@@ -41,7 +53,7 @@ const MobileNavBar = () => {
               ].map((route) => (
                 <Link
                   key={uuidv4()}
-                  className="cursor-pointer py-3 hover:text-white transition-all hover:underline"
+                  className="cursor-pointer py-3"
                   href={route[1]}
                 >
                   {route[0]}

@@ -2,6 +2,10 @@
 import Profile from "../components/home/profile";
 import PostsSection from "../components/home/posts-section";
 import ProjectSection from "../components/home/projects-section";
+import Footer from "../components/footer";
+import MobileNavBar from "../components/mobileNavBar";
+import NavBar from "../components/navBar";
+import { useTheme } from "../context/ThemeContext";
 
 type Props = {};
 
@@ -16,5 +20,20 @@ const Home = (props: Props) => {
     </div>
   );
 };
+
+export function App({ children }: { children: React.ReactNode }) {
+  const { darkTheme } = useTheme();
+  return (
+    <html className={`${darkTheme && "dark"}`}>
+      <head />
+      <body className="dark:bg-primaryBg bg-white dark:text-white text-primaryBg">
+        <NavBar />
+        <MobileNavBar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}
 
 export default Home;

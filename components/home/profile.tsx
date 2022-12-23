@@ -4,7 +4,7 @@ import photo from "../../assets/images/photo.png";
 import photo_colored from "../../assets/images/colored-photo.png";
 import arrow from "../../assets/images/icons8-right-arrow-100 (1).png";
 import Link from "next/link";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../app/context/ThemeContext";
 
 const Profile = () => {
   const { darkTheme } = useTheme();

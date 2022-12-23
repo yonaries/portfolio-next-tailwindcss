@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../app/context/ThemeContext";
 import sun from "../assets/images/icons8-sun-50.png";
 import moon from "../assets/images/icons8-moon-symbol-96.png";
 
@@ -13,7 +13,11 @@ const MobileNavBar = () => {
 
   return (
     <div>
-      <div className="md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-white dark:bg-primaryBg bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm z-20">
+      <div
+        className={`${
+          darkTheme && "dark"
+        } md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-white dark:bg-primaryBg bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm z-20`}
+      >
         <button
           onClick={() => setIsOn(true)}
           className="px-3 py-1 text-sm text-primaryBg dark:text-secondary font-semibold bg-white dark:bg-dusk border-2 border-primaryBg dark:border-neutral-600 rounded-full"

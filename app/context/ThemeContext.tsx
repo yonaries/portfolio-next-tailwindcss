@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 
 interface ThemeType {
@@ -13,9 +14,7 @@ const initialState: ThemeType = {
 
 const ThemeContext = React.createContext<ThemeType>(initialState);
 
-export const useTheme = () => {
-  return useContext(ThemeContext);
-};
+export const useTheme = () => useContext(ThemeContext);
 
 const ThemeProvider = ({ children }: any) => {
   const [darkTheme, setDarkTheme] = useState<boolean>(true);

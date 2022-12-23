@@ -1,11 +1,18 @@
 import Link from "next/link";
 import React from "react";
+import { useTheme } from "../app/context/ThemeContext";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const { darkTheme } = useTheme();
+
   return (
-    <div className="w-screen md:pt-14 flex justify-center text-neutral-500">
+    <div
+      className={`${
+        darkTheme && "dark"
+      } w-screen md:pt-14 flex justify-center text-neutral-500`}
+    >
       <div className="w-full mx-5 py-5 md:w-1/2 flex justify-between md:justify-start md:space-x-48 border-t-2 border-neutral-200 dark:border-neutral-800">
         <div className="flex flex-col">
           <Link

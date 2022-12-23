@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import photo from "../../assets/images/photo.png";
@@ -7,14 +8,14 @@ import Link from "next/link";
 import { useTheme } from "../../app/context/ThemeContext";
 
 const Profile = () => {
-  const { darkTheme } = useTheme();
+  const { isDark } = useTheme();
 
   return (
     <div className="md:flex w-full md:justify-between">
       <div className="py-5 md:hidden">
         <Image
           className="rounded-full w-12 "
-          src={darkTheme ? photo : photo_colored}
+          src={isDark ? photo : photo_colored}
           alt="Image of Yonathan Dejene"
         />
       </div>
@@ -49,7 +50,7 @@ const Profile = () => {
       <div className="">
         <Image
           className="rounded-full hidden md:block w-12 md:w-28"
-          src={darkTheme ? photo : photo_colored}
+          src={isDark ? photo : photo_colored}
           alt="Image of Yonathan Dejene"
         />
       </div>

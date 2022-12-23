@@ -2,14 +2,12 @@
 import React, { useContext, useEffect, useState } from "react";
 
 interface ThemeType {
-  darkTheme: boolean;
-  isLoaded: boolean;
-  changeTheme: Function;
+  isDark: boolean;
+  switchTheme: Function;
 }
 const initialState: ThemeType = {
-  darkTheme: false,
-  isLoaded: false,
-  changeTheme: () => {},
+  isDark: false,
+  switchTheme: () => {},
 };
 
 const ThemeContext = React.createContext<ThemeType>(initialState);
@@ -17,20 +15,25 @@ const ThemeContext = React.createContext<ThemeType>(initialState);
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeProvider = ({ children }: any) => {
-  const [darkTheme, setDarkTheme] = useState<boolean>(true);
+  const [isDark, setDarkTheme] = useState<boolean>(true);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const changeTheme = (isOn: boolean) => {
-    isOn
-      ? localStorage.removeItem("darkTheme")
-      : localStorage.setItem("darkTheme", "true");
-    isOn ? setDarkTheme(false) : setDarkTheme(true);
+  const switchTheme = (isOn: boolean) => {
+    if (isOn) {
+      localStorage.removeItem("darkTheme");
+      document.body.classList.remove("dark");
+      setDarkTheme(false);
+    } else {
+      localStorage.setItem("darkTheme", "true");
+      document.body.classList.add("dark");
+      setDarkTheme(true);
+    }
   };
 
   useEffect(() => {
     const checkTheme = () => {
       const theme = localStorage.getItem("darkTheme");
-      theme ? setDarkTheme(true) : setDarkTheme(false);
+      switchTheme(!theme);
       setIsLoaded(true);
     };
     checkTheme();
@@ -38,9 +41,8 @@ const ThemeProvider = ({ children }: any) => {
   }, []);
 
   const value = {
-    darkTheme: darkTheme,
-    isLoaded: isLoaded,
-    changeTheme: changeTheme,
+    isDark: isDark,
+    switchTheme: switchTheme,
   };
 
   return (

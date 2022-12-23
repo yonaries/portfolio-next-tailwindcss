@@ -1,21 +1,21 @@
 "use client";
-import Link from "next/link";
-import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useTheme } from "../app/context/ThemeContext";
-import sun from "../assets/images/icons8-sun-50.png";
-import moon from "../assets/images/icons8-moon-symbol-96.png";
+import { useTheme } from "../../app/context/ThemeContext";
+import moon from "../../assets/images/icons8-moon-symbol-96.png";
+import sun from "../../assets/images/icons8-sun-50.png";
 
 const MobileNavBar = () => {
   const [isOn, setIsOn] = useState<boolean>(false);
-  const { darkTheme, changeTheme } = useTheme();
+  const { isDark, switchTheme } = useTheme();
 
   return (
     <div>
       <div
         className={`${
-          darkTheme && "dark"
+          isDark && "dark"
         } md:hidden fixed top-0 w-full p-5 flex justify-end space-x-5 bg-white dark:bg-primaryBg bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm z-20`}
       >
         <button
@@ -25,11 +25,11 @@ const MobileNavBar = () => {
           Menu
         </button>
         <div
-          onClick={() => changeTheme(darkTheme)}
+          onClick={() => switchTheme(isDark)}
           className="p-1 rounded-lg border-2 border-neutral-600"
         >
           <Image
-            src={darkTheme ? sun : moon}
+            src={isDark ? sun : moon}
             width={25}
             height={25}
             alt="change theme"

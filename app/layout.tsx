@@ -1,9 +1,10 @@
 "use client";
-import MobileNavBar from "../components/mobileNavBar";
-import NavBar from "../components/navBar";
-import "../styles/globals.css";
+import React from "react";
 import Footer from "../components/footer";
-import ThemeProvider, { useTheme } from "./context/ThemeContext";
+import MobileNavBar from "../components/navbar/mobileNavBar";
+import NavBar from "../components/navbar/navBar";
+import ThemeProvider from "./context/ThemeContext";
+import "../styles/globals.css";
 
 export default function RootLayout({
   children,

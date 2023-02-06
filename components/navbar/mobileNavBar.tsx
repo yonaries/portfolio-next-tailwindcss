@@ -49,10 +49,10 @@ const MobileNavBar = () => {
             </div>
             <div className="flex flex-col divide-y-1 dark:divide-neutral-850 divide-neutral-200">
               {[
-                ["Home", "#home"],
+                ["Home", "/"],
                 ["Blog", "#blog"],
                 ["Snippets", "#snippets"],
-                ["Showcase", "#showcase"],
+                ["Showcase", "/showcase"],
                 ["Resume", "#resume"],
               ].map((route) => (
                 <Link

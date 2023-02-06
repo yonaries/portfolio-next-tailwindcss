@@ -49,31 +49,35 @@ const Footer = (props: Props) => {
             className="py-3 hover:text-black dark:hover:text-white transition-all"
             href="#"
           >
-            Intersets
+            Interests
           </Link>
         </div>
         <div className="flex flex-col">
           <Link
             className="py-3 hover:text-black dark:hover:text-white transition-all"
-            href="#"
+            href="https://linkedin.com/yonathan-dejene"
+            target="_blank"
           >
             LinkedIn
           </Link>
           <Link
             className="py-3 hover:text-black dark:hover:text-white transition-all"
-            href="#"
+            href="https://github.com/yonaries"
+            target="_blank"
           >
             Github
           </Link>
           <Link
             className="py-3 hover:text-black dark:hover:text-white transition-all"
-            href="#"
+            href="https://twitter.com/yonathanDejene"
+            target="_blank"
           >
             Twitter
           </Link>
           <Link
             className="py-3 hover:text-black dark:hover:text-white transition-all"
-            href="#"
+            href="https://t.me/yonathanDejene"
+            target="_blank"
           >
             Telegram
           </Link>

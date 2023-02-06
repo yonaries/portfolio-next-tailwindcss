@@ -21,10 +21,10 @@ const NavBar = () => {
       <div className="flex w-1/2 justify-between items-center">
         <div className="space-x-5 text-base font-medium flex">
           {[
-            ["Home", "#home"],
+            ["Home", "/"],
             ["Blog", "#blog"],
             ["Snippets", "#snippets"],
-            ["Showcase", "#showcase"],
+            ["Showcase", "/showcase"],
             ["Resume", "#resume"],
           ].map((route) => (
             <Link

@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode:'class',
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -12,7 +9,7 @@ module.exports = {
         secondary: "rgb(138, 138, 138)",
         dusk: "rgb(32, 32, 34)",
         "darker-dusk": "rgb(25, 25, 25)",
-        "neutral-850":"rgb(30, 30, 30)"
+        "neutral-850": "rgb(30, 30, 30)",
       },
       fontSize: {
         "2xs": "0.6rem",
@@ -27,9 +24,9 @@ module.exports = {
       minHeight: {
         48: "12rem",
       },
-      divideWidth:{
-        1:"1px"
-      }
+      divideWidth: {
+        1: "1px",
+      },
     },
   },
   plugins: [],
